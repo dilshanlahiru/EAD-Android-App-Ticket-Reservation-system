@@ -22,6 +22,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class HomeActivity extends AppCompatActivity {
+    private boolean stateT = false;
+    private DatabaseHelper databaseHelper = new DatabaseHelper(this);
+    private String userIDT ,userNameT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,15 +37,21 @@ public class HomeActivity extends AppCompatActivity {
         Button buttonLogin = findViewById(R.id.buttonLogin);
         Button buttonRegister = findViewById(R.id.buttonRegister);
 
+        try {
 
-        DatabaseHelper databaseHelper = new DatabaseHelper(this);
-        String userNameT = databaseHelper.getUserName();
-        if(!userNameT.isEmpty() ){
-            Toast.makeText(HomeActivity.this, "Hi "+ userNameT, Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(HomeActivity.this, ViewProfile.class);
-            startActivity(intent);
+            userIDT = databaseHelper.getUserID();
+            userNameT = databaseHelper.getUserName();
+            checkBackendStatus(userIDT);
 
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
+//        if(!userNameT.isEmpty() ){
+//            Toast.makeText(HomeActivity.this, "Hi "+ userNameT, Toast.LENGTH_SHORT).show();
+//            Intent intent = new Intent(HomeActivity.this, ViewProfile.class);
+//            startActivity(intent);
+//
+//        }
 
         // Set an onClickListener for the Login button
         buttonLogin.setOnClickListener(new View.OnClickListener() {
@@ -169,6 +178,51 @@ private void login (String email, String password){
     Volley.newRequestQueue(this).add(jsonObjectRequest);
 }
 
+    private void checkBackendStatus (String id) {
+        JSONObject requestBody = new JSONObject();
+        String url = "http://10.0.2.2:5286/api/User/"+id;
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                Request.Method.GET,
+                url,
+                requestBody, // Pass the JSON data if needed
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            if(response.getInt("status")==0){
+                                    stateT= true;
+                                Toast.makeText(HomeActivity.this, "Hi "+ userNameT, Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(HomeActivity.this, ViewProfile.class);
+                                startActivity(intent);
+                            }else if (response.getInt("status")==1){
+                                stateT= false;
+                                Toast.makeText(HomeActivity.this, "Your Account Deactivated", Toast.LENGTH_SHORT).show();
+//                                Intent intent = new Intent(HomeActivity.this, ViewProfile.class);
+//                                startActivity(intent);
+                            }
+
+
+                        } catch (Exception e) {
+                            throw new RuntimeException(e);
+                        }
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(HomeActivity.this, "Hi "+ userNameT +" , Loading in offline mode", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(HomeActivity.this, ViewProfile.class);
+                        startActivity(intent);
+
+                    }
+                }
+        );
+
+        // Add the request to the Volley request queue
+        Volley.newRequestQueue(this).add(jsonObjectRequest);
+
+    }
 
 
 }

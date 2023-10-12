@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:gravity="center"
-        android:text="Profile"
+        android:text="Edit Profile"
         android:textColor="@color/orange1"
         android:textSize="35dp"
         android:textStyle="bold" />
@@ -168,7 +168,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
         android:backgroundTint="@color/orange1"
-        android:text="Register"
+        android:text="Submit"
         android:textSize="18dp"
         android:textStyle="bold"
         tools:ignore="DuplicateSpeakableTextCheck" />
