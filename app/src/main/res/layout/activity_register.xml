@@ -1,99 +1,265 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:orientation="vertical"
     tools:context=".RegisterActivity">
 
-    <EditText
-        android:id="@+id/editTextNic"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="NIC Number"
-        android:inputType="text"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="32dp"/>
 
-    <EditText
-        android:id="@+id/editTextFullName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Full Name"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/editTextNic"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="16dp"/>
 
-    <EditText
-        android:id="@+id/editTextDob"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Date of Birth (YYYY-MM-DD)"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/editTextFullName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="16dp"/>
 
-    <EditText
-        android:id="@+id/editTextPhoneNumber"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:id="@+id/InnerLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Phone Number"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/editTextDob"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="16dp"/>
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Email"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/editTextPhoneNumber"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="16dp"/>
+        <TextView
+            android:id="@+id/profileLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:gravity="center"
+            android:text="Profile"
+            android:textColor="@color/orange1"
+            android:textSize="35dp"
+            android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/editTextEmail"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="16dp"/>
 
-    <Button
-        android:id="@+id/buttonRegister"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        app:layout_constraintTop_toBottomOf="@id/editTextPassword"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="24dp"/>
+        <ImageView
+            android:id="@+id/regImg"
+            android:layout_width="match_parent"
+            android:layout_height="182dp"
+            android:layout_marginBottom="15dp"
+            android:contentDescription="@string/img_content_login"
+            android:src="@drawable/new_logo" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/nvic"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginBottom="3dp"
+            android:layout_weight="1"
+            android:padding="1dp"
+            android:text="NIC"
+            android:textColor="@color/orange1"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/nic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/grey"
+            android:minHeight="48dp"
+            android:padding="3dp"
+            android:layout_marginLeft="3dp"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <TextView
+            android:id="@+id/vfulname"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginBottom="3dp"
+            android:layout_weight="1"
+            android:padding="1dp"
+            android:text="Full Name"
+            android:textColor="@color/orange1"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/fullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/grey"
+            android:minHeight="48dp"
+            android:padding="3dp"
+            android:layout_marginLeft="3dp"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <TextView
+            android:id="@+id/vemail"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginBottom="3dp"
+            android:layout_weight="1"
+            android:padding="1dp"
+            android:text="e-mail"
+            android:textColor="@color/orange1"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/grey"
+            android:layout_marginLeft="3dp"
+            android:minHeight="48dp"
+            android:padding="3dp"
+            />
+
+        <TextView
+            android:id="@+id/vPassword"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginBottom="3dp"
+            android:layout_weight="1"
+            android:padding="1dp"
+            android:text="Password"
+            android:textColor="@color/orange1"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/grey"
+            android:layout_marginLeft="3dp"
+            android:minHeight="48dp"
+            android:padding="3dp"
+            />
+
+        <Button
+            android:id="@+id/buttonRegister"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/orange1"
+            android:text="Register"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".RegisterActivity">-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextNic"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="NIC Number"-->
+<!--        android:inputType="text"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginEnd="32dp"-->
+<!--        android:layout_marginTop="32dp"/>-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextFullName"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Full Name"-->
+<!--        android:inputType="text"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/editTextNic"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginEnd="32dp"-->
+<!--        android:layout_marginTop="16dp"/>-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextDob"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Date of Birth (YYYY-MM-DD)"-->
+<!--        android:inputType="text"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/editTextFullName"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginEnd="32dp"-->
+<!--        android:layout_marginTop="16dp"/>-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextPhoneNumber"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Phone Number"-->
+<!--        android:inputType="text"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/editTextDob"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginEnd="32dp"-->
+<!--        android:layout_marginTop="16dp"/>-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextEmail"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Email"-->
+<!--        android:inputType="text"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/editTextPhoneNumber"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginEnd="32dp"-->
+<!--        android:layout_marginTop="16dp"/>-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextPassword"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Password"-->
+<!--        android:inputType="textPassword"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/editTextEmail"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginEnd="32dp"-->
+<!--        android:layout_marginTop="16dp"/>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/buttonRegister"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Register"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/editTextPassword"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginEnd="32dp"-->
+<!--        android:layout_marginTop="24dp"/>-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->

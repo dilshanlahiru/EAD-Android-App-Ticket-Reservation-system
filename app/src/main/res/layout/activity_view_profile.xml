@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    tools:context=".ViewProfile">
+
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="match_parent"
+        android:layout_height="265dp"
+        android:layout_gravity="center"
+        android:src="@drawable/new_logo" />
+
+    <!-- User Name -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp"
+        >
+        <TextView
+            android:id="@+id/v_usernameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/orangetint"
+            android:textSize="18dp"
+            android:text="User Name : "
+            android:textColor="@color/orange1"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/usernameTextView"
+            android:layout_width="wrap_content"
+            android:textColorHint="@color/orangetint"
+            android:textSize="18dp"
+            android:layout_height="wrap_content"
+            android:text="User Name"
+            android:layout_gravity="center_horizontal"/>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="15dp"
+        android:textColorHint="@color/orangetint"
+
+        android:textSize="18dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/v2_usernameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/orange1"
+            android:textColorHint="@color/orangetint"
+            android:textSize="18dp"
+            android:text="NIC : "
+            android:layout_gravity="center_horizontal"/>
+
+    <!-- NIC -->
+    <TextView
+        android:id="@+id/nicTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/orangetint"
+        android:textSize="18dp"
+        android:text="NIC"
+        android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+    <!-- Account Status -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="25dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/v3_usernameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/orange1"
+            android:textColorHint="@color/orangetint"
+            android:textSize="18dp"
+            android:text="Account Status : "
+            android:layout_gravity="center_horizontal"/>
+    <TextView
+        android:id="@+id/statusTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/orangetint"
+        android:textSize="18dp"
+        android:text="Active"
+        android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+
+    <!-- Buttons -->
+    <Button
+        android:id="@+id/deactivateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deactivate Account"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/editProfileButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Profile"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    tools:context=".StationOwnerMain">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp">
+
+        <Button
+            android:id="@+id/viewUserProfile"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/white"
+            android:drawableLeft="@drawable/stationprofile1"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/orange1"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/mainLabel"
+            android:gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/fuel_ease"
+            android:textColor="@color/orange1"
+            android:textStyle="bold"
+            android:textSize="35dp"
+            />
+
+
+    </LinearLayout>
+
+<!--    <ImageView-->
+<!--        android:id="@+id/regImg"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="280dp"-->
+<!--        android:layout_marginBottom="5dp"-->
+<!--        android:contentDescription="@string/img_content_login"-->
+<!--        android:src="@drawable/station_main" />-->
+
+<!--    Fuel Status-->
+    <LinearLayout
+        android:id="@+id/fuel_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/mainUiLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/fuel_label"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="@color/orange1"/>
+
+        <LinearLayout
+            android:id="@+id/btn_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/petrol_btn"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+
+                android:padding="10dp"
+                android:textSize="20dp"
+                android:backgroundTintMode="add"
+                android:backgroundTint="@color/orange1"
+                android:layout_marginEnd="10dp"
+                android:text="@string/petrol"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/diesel_btn"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:backgroundTintMode="add"
+                android:backgroundTint="@color/orange1"
+
+                android:padding="10dp"
+                android:textSize="20dp"
+                android:layout_marginStart="10dp"
+                android:text="@string/diesel"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+<!--    Station Status-->
+    <LinearLayout
+        android:id="@+id/station_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/stationUiLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/station_main_label"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="@color/orange1" />
+
+            <LinearLayout
+                android:id="@+id/fuelQueue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/petrolQueueCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/petrolVehicles"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center"
+                        android:text="@string/petrolQ"
+                        android:textSize="60sp"
+                        android:textColor="@color/grey"/>
+
+                    <TextView
+                        android:id="@+id/petrol"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/petrol"
+                        android:gravity="center"
+                        android:textSize="23sp"
+                        android:textColor="@color/orange1"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/dieselQueueCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/dieselVehicles"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center"
+                        android:text="@string/dieselQ"
+                        android:textSize="60sp"
+                        android:textColor="@color/grey"/>
+
+                    <TextView
+                        android:id="@+id/diesel"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/diesel"
+                        android:gravity="center"
+                        android:textSize="23sp"
+                        android:textColor="@color/orange1"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
