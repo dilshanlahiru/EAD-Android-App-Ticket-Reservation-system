@@ -17,6 +17,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".CommenPage"
+            android:exported="false" />
+        <activity
+            android:name=".ScheduleList"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateResevations"
+            android:exported="false" />
+        <activity
+            android:name=".Previous_Reservation_List"
+            android:exported="false" />
+        <activity
             android:name=".UpdateProfile"
             android:exported="false" />
         <activity

@@ -62,7 +62,7 @@ public class HomeActivity extends AppCompatActivity {
                 String password = editTextPassword.getText().toString();
 
                 login(nic, password);
-//                Intent intent = new Intent(HomeActivity.this, ViewProfile.class);
+//                Intent intent = new Intent(HomeActivity.this, CommenPage.class);
 //                startActivity(intent);
 
             }
@@ -130,7 +130,7 @@ private void login (String email, String password){
                                 // Data inserted successfully
                                 Log.e("login success", "Error: " + "losgin sucess");
                                 Toast.makeText(HomeActivity.this, "login success", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(HomeActivity.this, ViewProfile.class);
+                                Intent intent = new Intent(HomeActivity.this, CommenPage.class);
                                 startActivity(intent);
 //                                Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
 //                                startActivity(intent);
@@ -192,7 +192,7 @@ private void login (String email, String password){
                             if(response.getInt("status")==0){
                                     stateT= true;
                                 Toast.makeText(HomeActivity.this, "Hi "+ userNameT, Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(HomeActivity.this, ViewProfile.class);
+                                Intent intent = new Intent(HomeActivity.this, CommenPage.class);
                                 startActivity(intent);
                             }else if (response.getInt("status")==1){
                                 stateT= false;
@@ -211,9 +211,15 @@ private void login (String email, String password){
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(HomeActivity.this, "Hi "+ userNameT +" , Loading in offline mode", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(HomeActivity.this, ViewProfile.class);
-                        startActivity(intent);
+
+                        if (id != null){
+                            Toast.makeText(HomeActivity.this, "Hi "+ userNameT +" , Loading in offline mode", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(HomeActivity.this, CommenPage.class);
+                            startActivity(intent);
+                        }else
+                        Toast.makeText(HomeActivity.this, "Auto Login Failed", Toast.LENGTH_SHORT).show();
+//                        Intent intent = new Intent(HomeActivity.this, CommenPage.class);
+//                        startActivity(intent);
 
                     }
                 }
