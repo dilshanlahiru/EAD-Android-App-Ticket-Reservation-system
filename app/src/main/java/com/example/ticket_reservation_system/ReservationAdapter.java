@@ -6,6 +6,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -89,8 +90,8 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
                         Log.e("click", "click delete button" );
                         deleteReservation(reservation.getReservationId());
 
-                        Intent intent = new Intent(context, Previous_Reservation_List.class);
-                        context.startActivity(intent);
+//                        Intent intent = new Intent(context, CommenPage.class);
+//                        context.startActivity(intent);
                         // Handle the "Add Reservation" button click
                         // You can open a new activity or a dialog to create a new reservation
                     }
@@ -117,7 +118,7 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
 
     private void deleteReservation (String id){
         Log.e("ID", "ID: " + id);
-        String url = "http://10.0.2.2:5286/api/Reservation/" + id;
+        String url = Config.BASE_URL+"/api/Reservation/" + id;
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                 Request.Method.DELETE,
@@ -126,7 +127,13 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+
+//                        DatabaseHelper databaseHelper = new DatabaseHelper(context);
+//                        SQLiteDatabase db = databaseHelper.getWritableDatabase();
+//                        db.execSQL("DELETE FROM reservations");
                         Toast.makeText(context, "Delete successfully", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(context, CommenPage.class);
+                        context.startActivity(intent);
 
                     }
                 },

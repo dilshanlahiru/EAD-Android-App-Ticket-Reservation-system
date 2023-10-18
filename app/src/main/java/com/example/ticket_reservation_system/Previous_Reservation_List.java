@@ -3,9 +3,12 @@ package com.example.ticket_reservation_system;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.example.ticket_reservation_system.DatabaseHelper;
 
 import android.app.Dialog;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -71,7 +74,19 @@ public class Previous_Reservation_List extends AppCompatActivity {
     }
 
     private void updateRecyclerView(List<Reservation> reservations) {
+        DatabaseHelper databaseHelper = new DatabaseHelper(this);
+        SQLiteDatabase db = databaseHelper.getWritableDatabase();
+        db.execSQL("DELETE FROM reservations");
+        db.close();
+        databaseHelper.insertReservations(reservations);
         adapter = new ReservationAdapter(this, reservations);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+    }
+
+    private void updateRecyclerViewOffline() {
+        DatabaseHelper databaseHelper = new DatabaseHelper(this);
+        adapter = new ReservationAdapter(this, databaseHelper.getReservations());
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
     }
@@ -86,7 +101,7 @@ public class Previous_Reservation_List extends AppCompatActivity {
         List<Reservation> reservations = new ArrayList<>();
 
         JSONObject requestBody = new JSONObject();
-        String url = "http://10.0.2.2:5286/api/Reservation/traverler/"+nic;
+        String url = Config.BASE_URL+"/api/Reservation/traverler/"+nic;
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest( // Use JsonArrayRequest instead of JsonObjectRequest
                 Request.Method.GET,
                 url,
@@ -114,6 +129,7 @@ public class Previous_Reservation_List extends AppCompatActivity {
                             }
                             updateRecyclerView(reservations);
 
+
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
                         }
@@ -123,39 +139,33 @@ public class Previous_Reservation_List extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Log.e("error get data", "Error getting data: " + error);
+                        updateRecyclerViewOffline();
                     }
                 }
         );
 
-// Add the request to the Volley request queue
         Volley.newRequestQueue(this).add(jsonArrayRequest);
 
 
-
-        // Replace this with your API call to get reservation data
-
-
-
-//        reservations.add(new Reservation("Train 1", "Start 1", "Destination 1"));
-//        reservations.add(new Reservation("12345", "ABC123",
-//                "SCH456", "Sample Express", "City A", "City B",
-//                "2023-10-12 14:30:00", "2023-10-15 08:00:00",
-//                "2023-10-15 12:30:00", 2, 1, false));
-//
-//        reservations.add(new Reservation("12345", "ABC123",
-//                "SCH456", "large Express", "City c", "City d",
-//                "2023-10-12 14:30:00", "2023-10-15 08:00:00",
-//                "2023-10-15 12:30:00", 3, 1, false));
-
-        // Add more reservations as needed
         return reservations;
     }
 
+
+
     private String formatDateTime(String dateTime) {
         try {
-            SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.US);
+            SimpleDateFormat inputFormat1 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.US);
+            SimpleDateFormat inputFormat2 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.US);
+
+            Date date;
+            try {
+                date = inputFormat1.parse(dateTime);
+            } catch (ParseException e) {
+                // If the first format fails, try the second format
+                date = inputFormat2.parse(dateTime);
+            }
+
             SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US);
-            Date date = inputFormat.parse(dateTime);
             return outputFormat.format(date);
         } catch (ParseException e) {
             e.printStackTrace();

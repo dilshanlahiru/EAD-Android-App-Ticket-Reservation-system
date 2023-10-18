@@ -31,6 +31,8 @@ public class ViewProfile extends AppCompatActivity {
     private Button deactivateButton;
     private Button editProfileButton;
 
+    private Button logoutProfileButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,7 @@ public class ViewProfile extends AppCompatActivity {
         statusTextView = findViewById(R.id.statusTextView);
         deactivateButton = findViewById(R.id.deactivateButton);
         editProfileButton = findViewById(R.id.editProfileButton);
+        logoutProfileButton = findViewById(R.id.logoutProfileButton);
 
         DatabaseHelper databaseHelper = new DatabaseHelper(this);
         String userName = databaseHelper.getUserName();
@@ -75,13 +78,33 @@ public class ViewProfile extends AppCompatActivity {
             }
 
         });
+
+        logoutProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseHelper dbHelper = new DatabaseHelper(ViewProfile.this);
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
+                // Clear the table before adding new data
+                db.execSQL("DELETE FROM users");
+                db.close();
+
+                cleanSQLLITEDatabases ();
+
+                Toast.makeText(ViewProfile.this, "Log Out Completed" , Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ViewProfile.this, HomeActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+
     }
 
     private void deactivateAccount(String id) {
         JSONObject requestBody = new JSONObject();
         // If you're sending JSON data in the request body, you can add data here if needed.
 
-        String url = "http://10.0.2.2:5286/api/User/" + id + "/1";
+        String url = Config.BASE_URL+"/api/User/" + id + "/1";
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                 Request.Method.PUT,
@@ -110,6 +133,14 @@ public class ViewProfile extends AppCompatActivity {
 
         // Add the request to the Volley request queue
         Volley.newRequestQueue(this).add(jsonObjectRequest);
+    }
+
+    private void cleanSQLLITEDatabases (){
+        DatabaseHelper databaseHelper = new DatabaseHelper(this);
+        SQLiteDatabase db = databaseHelper.getWritableDatabase();
+        db.execSQL("DELETE FROM schedules");
+        db.execSQL("DELETE FROM reservations");
+        db.close();
     }
 
 

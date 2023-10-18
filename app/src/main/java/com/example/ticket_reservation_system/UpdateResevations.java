@@ -61,7 +61,7 @@ public class UpdateResevations extends AppCompatActivity {
 
     private void getData(String id){
         JSONObject requestBody = new JSONObject();
-        String url = "http://10.0.2.2:5286/api/Reservation/"+id;
+        String url = Config.BASE_URL+"/api/Reservation/"+id;
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                 Request.Method.GET,
                 url,
@@ -115,7 +115,7 @@ public class UpdateResevations extends AppCompatActivity {
             throw new RuntimeException(e);
         }
 
-        String url = "http://10.0.2.2:5286/api/Reservation";
+        String url = Config.BASE_URL+"/api/Reservation";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                 Request.Method.PUT,
                 url,

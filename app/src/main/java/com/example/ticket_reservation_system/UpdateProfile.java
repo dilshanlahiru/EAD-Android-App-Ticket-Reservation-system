@@ -3,6 +3,7 @@ package com.example.ticket_reservation_system;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -86,7 +87,7 @@ public class UpdateProfile extends AppCompatActivity {
             throw new RuntimeException(e);
         }
 
-        String url = "http://10.0.2.2:5286/api/User";
+        String url = Config.BASE_URL+"/api/User";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                 Request.Method.PUT,
                 url,
@@ -94,6 +95,11 @@ public class UpdateProfile extends AppCompatActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+                        DatabaseHelper dbHelper = new DatabaseHelper(UpdateProfile.this);
+                        SQLiteDatabase db = dbHelper.getWritableDatabase();
+                        // Clear the table before adding new data
+                        db.execSQL("DELETE FROM users");
+                        db.close();
                         Toast.makeText(UpdateProfile.this, "Update successful", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(UpdateProfile.this, HomeActivity.class);
                         startActivity(intent);
@@ -115,7 +121,7 @@ public class UpdateProfile extends AppCompatActivity {
 
     private void getData (String id) {
         JSONObject requestBody = new JSONObject();
-        String url = "http://10.0.2.2:5286/api/User/"+id;
+        String url = Config.BASE_URL+"/api/User/"+id;
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                 Request.Method.GET,
                 url,

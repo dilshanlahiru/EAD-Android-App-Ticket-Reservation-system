@@ -124,7 +124,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
-        String url = "http://10.0.2.2:5286/api/Reservation";
+        String url = Config.BASE_URL+"/api/Reservation";
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                 Request.Method.POST,

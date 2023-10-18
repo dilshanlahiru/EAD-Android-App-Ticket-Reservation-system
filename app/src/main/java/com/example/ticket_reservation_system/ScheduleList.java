@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -45,7 +46,21 @@ public class ScheduleList extends AppCompatActivity {
     }
 
     private void updateRecycleView (List<Schedule> schedules){
+        DatabaseHelper databaseHelper = new DatabaseHelper(this);
+        SQLiteDatabase db = databaseHelper.getWritableDatabase();
+        db.execSQL("DELETE FROM schedules");
+        db.close();
+        databaseHelper.insertSchedules(schedules);
+
         adapter = new ScheduleAdapter(this, schedules);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+    }
+
+    private void updateRecyclerViewOffline() {
+        DatabaseHelper databaseHelper = new DatabaseHelper(this);
+
+        adapter = new ScheduleAdapter(this, databaseHelper.getSchedules());
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
     }
@@ -55,7 +70,7 @@ public class ScheduleList extends AppCompatActivity {
 
         JSONObject requestBody = new JSONObject();
 
-        String url = "http://10.0.2.2:5286/api/Schedule";
+        String url = Config.BASE_URL+"/api/Schedule";
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest( // Use JsonArrayRequest instead of JsonObjectRequest
                 Request.Method.GET,
                 url,
@@ -86,6 +101,7 @@ public class ScheduleList extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Log.e("error get data", "Error getting data: " + error);
+                        updateRecyclerViewOffline();
                     }
                 }
         );

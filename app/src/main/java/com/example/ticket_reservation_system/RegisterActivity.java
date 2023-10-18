@@ -58,7 +58,7 @@ public class RegisterActivity extends AppCompatActivity {
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
-        String url = "http://10.0.2.2:5286/api/User";
+        String url = Config.BASE_URL+"/api/User";
 //        Log.e("name", "data: " + fullNameEditText.getText().toString());
 //        Log.e("email", "data: " + emailEditText.getText().toString());
 //        Log.e("password", "data: " + passwordEditText.getText().toString());
