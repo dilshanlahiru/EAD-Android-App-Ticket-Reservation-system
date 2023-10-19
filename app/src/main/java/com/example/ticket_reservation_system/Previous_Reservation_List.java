@@ -1,6 +1,7 @@
 package com.example.ticket_reservation_system;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.ticket_reservation_system.DatabaseHelper;
@@ -35,6 +36,7 @@ import java.util.Locale;
 public class Previous_Reservation_List extends AppCompatActivity {
     private RecyclerView recyclerView;
     private Button addReservationButton;
+    private Button goBackButton;
     private ReservationAdapter adapter;
     private List<Reservation> reservationList;
     private DatabaseHelper databaseHelper = new DatabaseHelper(this);
@@ -44,10 +46,19 @@ public class Previous_Reservation_List extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_previous_reservation_list);
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+
+        // Set the Toolbar as the action bar
+        setSupportActionBar(toolbar);
+
+        // Set the title of the Toolbar
+        getSupportActionBar().setTitle("Previous Reservations List");
 
         nic  = databaseHelper.getNIC();
         recyclerView = findViewById(R.id.reservationRecyclerView);
         addReservationButton = findViewById(R.id.addReservationButton);
+
+        goBackButton = findViewById(R.id.goBackButton);
 
         // Initialize your RecyclerView and Adapter here
         reservationList = fetchReservationData(); // Implement this method to fetch data from the API
@@ -69,6 +80,14 @@ public class Previous_Reservation_List extends AppCompatActivity {
 
                 // Handle the "Add Reservation" button click
                 // You can open a new activity or a dialog to create a new reservation
+            }
+        });
+
+        goBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Previous_Reservation_List.this, CommenPage.class);
+                startActivity(intent);
             }
         });
     }

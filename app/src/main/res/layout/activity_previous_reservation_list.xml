@@ -5,17 +5,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Previous_Reservation_List">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/orange1" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/reservationRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <Button
-        android:id="@+id/addReservationButton"
-        android:layout_width="wrap_content"
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Reservation"
+        android:orientation="horizontal"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+
+        >
+        <Button
+            android:id="@+id/goBackButton"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="go back"
+            android:backgroundTint="@color/orange1"
+            android:layout_marginRight="5dp"/>
+
+
+        <Button
+            android:id="@+id/addReservationButton"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="Add Reservation"
+            android:backgroundTint="@color/orange1"
+            android:layout_marginLeft="5dp"/>
+
+    </LinearLayout>
+
+<!--    <Button-->
+<!--        android:id="@+id/addReservationButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Add Reservation"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:backgroundTint="@color/orange1"/>-->
 </RelativeLayout>

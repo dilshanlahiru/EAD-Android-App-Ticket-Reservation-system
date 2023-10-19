@@ -94,6 +94,83 @@
         android:textSize="18dp"
         android:layout_gravity="center_horizontal"
         android:text="Destination: " /></LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp"
+        >
+        <TextView
+            android:id="@+id/v_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/orangetint"
+            android:textSize="18dp"
+            android:text="Start Time"
+            android:textColor="@color/orange1"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/popupStartDateTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/orangetint"
+            android:textSize="18dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Start date time " /></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp"
+        >
+        <TextView
+            android:id="@+id/v_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/orangetint"
+            android:textSize="18dp"
+            android:text="Destination Time: "
+            android:textColor="@color/orange1"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/popupDestinaionDateTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/orangetint"
+            android:textSize="18dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Destination time" /></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp"
+        >
+        <TextView
+            android:id="@+id/v_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/orangetint"
+            android:textSize="18dp"
+            android:text="Seat Count: "
+            android:textColor="@color/orange1"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/popupseatCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/orangetint"
+            android:textSize="18dp"
+            android:layout_gravity="center_horizontal"
+            android:text="seat count " /></LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -108,14 +185,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
-            android:text="edit" />
+            android:text="edit"
+            android:backgroundTint="@color/orange1"/>
 
         <Button
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:text="delete" />
+            android:text="delete"
+            android:backgroundTint="#FF5722"/>
 
     </LinearLayout>
 

@@ -3,10 +3,13 @@ package com.example.ticket_reservation_system;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
+import androidx.appcompat.widget.Toolbar;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -31,18 +34,37 @@ public class ScheduleList extends AppCompatActivity {
 
     private  ScheduleAdapter adapter;
 
+    private Button goBackButton;
+
     private List<Schedule> scheduleList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule_list);
+        goBackButton = findViewById(R.id.gobackButton);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+
+        // Set the Toolbar as the action bar
+        setSupportActionBar(toolbar);
+
+        // Set the title of the Toolbar
+        getSupportActionBar().setTitle("Schedule List");
 
         recyclerView = findViewById(R.id.scheduleRecyclerView);
         scheduleList = fetchScheduleData();
         adapter = new ScheduleAdapter(this, scheduleList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+
+        goBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ScheduleList.this, CommenPage.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void updateRecycleView (List<Schedule> schedules){

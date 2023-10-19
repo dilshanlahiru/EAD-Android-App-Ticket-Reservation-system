@@ -108,23 +108,28 @@
     <!-- Buttons -->
     <Button
         android:id="@+id/deactivateButton"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Deactivate Account"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_marginBottom="5dp"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#B5F40303"/>
 
     <Button
         android:id="@+id/editProfileButton"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/orange1"
         android:text="Edit Profile"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_marginBottom="5dp"/>
 
     <Button
         android:id="@+id/logoutProfileButton"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Log Out"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/orange1"
+        android:text="Log Out" />
 
 </LinearLayout>

@@ -66,6 +66,9 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
                 TextView popupTrainName = dialogview.findViewById(R.id.popupTrainName);
                 TextView popupStart = dialogview.findViewById(R.id.popupStart);
                 TextView popupDestination = dialogview.findViewById(R.id.popupDestination);
+                TextView popupStartTime = dialogview.findViewById(R.id.popupStartDateTime);
+                TextView popupDestinationTime = dialogview.findViewById(R.id.popupDestinaionDateTime);
+                TextView seatCount = dialogview.findViewById(R.id.popupseatCount);
                 Button editButton = dialogview.findViewById(R.id.button1);
                 Button deleteButton = dialogview.findViewById(R.id.button2);
 
@@ -73,6 +76,10 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
                 popupTrainName.setText( reservation.getTrainName());
                 popupStart.setText(reservation.getStart());
                 popupDestination.setText(reservation.getDestination());
+                popupStartTime.setText(reservation.getStartDateTime());
+                popupDestinationTime.setText(reservation.getDestinationDateTime());
+                seatCount.setText(""+reservation.getSeats());
+
                 editButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
