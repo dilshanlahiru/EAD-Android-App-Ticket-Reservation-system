@@ -164,6 +164,7 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
         private TextView startTextView;
         private TextView destinationTextView;
         private TextView seatsTextView;
+        private TextView statusTextView;
 
         public ReservationViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -171,6 +172,7 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
             startTextView = itemView.findViewById(R.id.startTextView);
             destinationTextView = itemView.findViewById(R.id.destinationTextView);
             seatsTextView = itemView.findViewById(R.id.seatsTextView);
+            statusTextView = itemView.findViewById(R.id.v_status);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -190,6 +192,17 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
             startTextView.setText("From: " + reservation.getStart());
             destinationTextView.setText("To: " + reservation.getDestination());
             seatsTextView.setText("Seats: " + reservation.getSeats());
+            statusTextView.setText(checkCondition(reservation.isPast()));
+        }
+
+        public  String checkCondition(boolean input) {
+            String out =null;
+            if(input){
+                out = "Reservation Status: Expired";
+            }else {
+                out = "Reservation Status: Available";
+            }
+            return out;
         }
 
     }
