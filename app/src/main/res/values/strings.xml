@@ -1,73 +1,28 @@
 <resources>
-    <string name="app_name">Ticket-Reservation-system</string>
-    <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+<string name="app_name">Ticket-Reservation-system</string>
+<string name="action_settings">Settings</string>
+<!-- Strings used for fragments for navigation -->
+<string name="first_fragment_label">First Fragment</string>
+<string name="second_fragment_label">Second Fragment</string>
+<string name="next">Next</string>
+<string name="previous">Previous</string>
 
-    <string name="login">Login</string>
-    <string name="hint_pwd">Password</string>
-    <string name="hint_station_password">Enter Station Password</string>
-    <string name="hint_station_re_password">Re-Enter Station Password</string>
-    <string name="hint_user">Username</string>
-    <string name="text_no_account">Dont have an account? Register</string>
-    <string name="img_content_login">Login activity image</string>
-    <string name="registerStation">Station Registration</string>
-    <string name="registerVehicle">Vehicle Registration</string>
-    <string name="text_have_account">Already have an account? Login</string>
-    <string name="hint_station_name">Enter Station Name</string>
-    <string name="hint_station_email">Enter Station Email</string>
-    <string name="station_name">Station Name</string>
-    <string name="station_email">Station Email</string>
-    <string name="hint_phone">Phone number</string>
-    <string name="hint_station_address">Enter Station Address</string>
-    <string name="hint_waiting_time">00 : 00</string>
-    <string name="station_address">Station Address</string>
-    <string name="fuel_amount">Amount</string>
-    <string name="station_password">Station Password</string>
-    <string name="label_fuel_station">Fuel Station</string>
-    <string name="label_vehicle">Vehicle</string>
-    <string name="continue_vehicle">Continue As A Vehicle Owner</string>
-    <string name="continue_fuel_station">Continue As A Fuel Station Owner</string>
-    <string name="hint_v_owner_name">Enter Vehicle Owner Name</string>
-    <string name="hint_v_no">Enter Vehicle Number</string>
-    <string name="v_no">Vehicle Number</string>
-    <string name="spinner_content_desc">Select Fuel Type</string>
-    <string name="fuel_type">Fuel Type</string>
-    <string name="hint_user_email">Enter Your Email</string>
-    <string name="hint_user_password">Enter Your Password</string>
-    <string name="hint_user_repassword">Re-Enter Your Password</string>
-    <string name="user_profile">My Profile</string>
-    <string name="station_profile">Station Profile</string>
-    <string name="back_button">back button</string>
-    <string name="edit_profile">Edit Profile</string>
-    <string name="label_fuel_type">Fuel Type</string>
-    <string name="fuel_ease">Fuel Ease</string>
-    <string name="seach_location">Search Nearby Fuel Stations</string>
-    <string name="station_main_label">Fuel Queue Status</string>
-    <string name="fuel_main_label">Fuel Availability Status</string>
-    <string name="fuel_label">Fuel Availability</string>
-    <string name="f_arrived">Fuel Arrived</string>
-    <string name="f_finished">Fuel Finished</string>
-    <string name="fuel_status_label">Fuel Status</string>
-    <string name="average_waiting_time">Average Waiting Time</string>
-    <string name="avg_wt_time_label">Average Waiting Time</string>
-    <string name="petrol">Petrol</string>
-    <string name="diesel">Diesel</string>
-    <string name="petrolQ">00</string>
-    <string name="dieselQ">00</string>
-    <string name="yes">YES</string>
-    <string name="no">NO</string>
-    <string name="avg_waiting_time">00:00</string>
-    <string name="station_location">Location</string>
-    <string name="update_your_status">Update Your Status</string>
-    <string name="check_out">Check Out</string>
-    <string name="check_in">Check In</string>
-    <string name="hint_fuel_type">Fuel Type</string>
+<string name="login">Login</string>
+<string name="hint_pwd">Password</string>
+<string name="hint_user">Username</string>
 
-    <string name="lorem_ipsum">
+<string name="img_content_login">Login activity image</string>
+
+<string name="hint_user_email">Enter Your Email</string>
+<string name="hint_user_password">Enter Your Password</string>
+<string name="hint_user_repassword">Re-Enter Your Password</string>
+<string name="user_profile">My Profile</string>
+
+<string name="back_button">back button</string>
+<string name="edit_profile">Edit Profile</string>
+
+
+<string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
         volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
         dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
@@ -103,6 +58,143 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
-    <string name="nic">NIC</string>
-    <string name="email">e-mail</string>
+<string name="nic">NIC</string>
+<string name="email">e-mail</string>
 </resources>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<resources>-->
+<!--<string name="app_name">Ticket-Reservation-system</string>-->
+<!--<string name="action_settings">Settings</string>-->
+<!--&lt;!&ndash; Strings used for fragments for navigation &ndash;&gt;-->
+<!--<string name="first_fragment_label">First Fragment</string>-->
+<!--<string name="second_fragment_label">Second Fragment</string>-->
+<!--<string name="next">Next</string>-->
+<!--<string name="previous">Previous</string>-->
+
+<!--<string name="login">Login</string>-->
+<!--<string name="hint_pwd">Password</string>-->
+<!--<string name="hint_station_password">Enter Station Password</string>-->
+<!--<string name="hint_station_re_password">Re-Enter Station Password</string>-->
+<!--<string name="hint_user">Username</string>-->
+<!--<string name="text_no_account">Dont have an account? Register</string>-->
+<!--<string name="img_content_login">Login activity image</string>-->
+<!--<string name="registerStation">Station Registration</string>-->
+<!--<string name="registerVehicle">Vehicle Registration</string>-->
+<!--<string name="text_have_account">Already have an account? Login</string>-->
+<!--<string name="hint_station_name">Enter Station Name</string>-->
+<!--<string name="hint_station_email">Enter Station Email</string>-->
+<!--<string name="station_name">Station Name</string>-->
+<!--<string name="station_email">Station Email</string>-->
+<!--<string name="hint_phone">Phone number</string>-->
+<!--<string name="hint_station_address">Enter Station Address</string>-->
+<!--<string name="hint_waiting_time">00 : 00</string>-->
+<!--<string name="station_address">Station Address</string>-->
+<!--<string name="fuel_amount">Amount</string>-->
+<!--<string name="station_password">Station Password</string>-->
+<!--<string name="label_fuel_station">Fuel Station</string>-->
+<!--<string name="label_vehicle">Vehicle</string>-->
+<!--<string name="continue_vehicle">Continue As A Vehicle Owner</string>-->
+<!--<string name="continue_fuel_station">Continue As A Fuel Station Owner</string>-->
+<!--<string name="hint_v_owner_name">Enter Vehicle Owner Name</string>-->
+<!--<string name="hint_v_no">Enter Vehicle Number</string>-->
+<!--<string name="v_no">Vehicle Number</string>-->
+<!--<string name="spinner_content_desc">Select Fuel Type</string>-->
+<!--<string name="fuel_type">Fuel Type</string>-->
+<!--<string name="hint_user_email">Enter Your Email</string>-->
+<!--<string name="hint_user_password">Enter Your Password</string>-->
+<!--<string name="hint_user_repassword">Re-Enter Your Password</string>-->
+<!--<string name="user_profile">My Profile</string>-->
+<!--<string name="station_profile">Station Profile</string>-->
+<!--<string name="back_button">back button</string>-->
+<!--<string name="edit_profile">Edit Profile</string>-->
+<!--<string name="label_fuel_type">Fuel Type</string>-->
+<!--<string name="fuel_ease">Fuel Ease</string>-->
+<!--<string name="seach_location">Search Nearby Fuel Stations</string>-->
+<!--<string name="station_main_label">Fuel Queue Status</string>-->
+<!--<string name="fuel_main_label">Fuel Availability Status</string>-->
+<!--<string name="fuel_label">Fuel Availability</string>-->
+<!--<string name="f_arrived">Fuel Arrived</string>-->
+<!--<string name="f_finished">Fuel Finished</string>-->
+<!--<string name="fuel_status_label">Fuel Status</string>-->
+<!--<string name="average_waiting_time">Average Waiting Time</string>-->
+<!--<string name="avg_wt_time_label">Average Waiting Time</string>-->
+<!--<string name="petrol">Petrol</string>-->
+<!--<string name="diesel">Diesel</string>-->
+<!--<string name="petrolQ">00</string>-->
+<!--<string name="dieselQ">00</string>-->
+<!--<string name="yes">YES</string>-->
+<!--<string name="no">NO</string>-->
+<!--<string name="avg_waiting_time">00:00</string>-->
+<!--<string name="station_location">Location</string>-->
+<!--<string name="update_your_status">Update Your Status</string>-->
+<!--<string name="check_out">Check Out</string>-->
+<!--<string name="check_in">Check In</string>-->
+<!--<string name="hint_fuel_type">Fuel Type</string>-->
+
+<!--<string name="lorem_ipsum">-->
+<!--        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris-->
+<!--        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus-->
+<!--        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad-->
+<!--        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend-->
+<!--        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,-->
+<!--        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n-->
+<!--        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus-->
+<!--        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed-->
+<!--        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada-->
+<!--        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,-->
+<!--        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor-->
+<!--        bibendum, vel congue leo egestas.\n\n-->
+<!--        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit-->
+<!--        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,-->
+<!--        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer-->
+<!--        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at-->
+<!--        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,-->
+<!--        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque-->
+<!--        est.\n\n-->
+<!--        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.-->
+<!--        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui-->
+<!--        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In-->
+<!--        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,-->
+<!--        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra-->
+<!--        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a-->
+<!--        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus-->
+<!--        convallis.\n\n-->
+<!--        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et-->
+<!--        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa-->
+<!--        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,-->
+<!--        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper-->
+<!--        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus-->
+<!--        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus-->
+<!--        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.-->
+<!--    </string>-->
+<!--<string name="nic">NIC</string>-->
+<!--<string name="email">e-mail</string>-->
+<!--</resources>-->
