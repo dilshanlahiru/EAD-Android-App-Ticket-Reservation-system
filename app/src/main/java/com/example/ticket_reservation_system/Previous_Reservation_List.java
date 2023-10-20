@@ -142,7 +142,7 @@ public class Previous_Reservation_List extends AppCompatActivity {
                                         scheduleObject.getString("start"), scheduleObject.getString("destination"),
                                         formatDateTime(object.getString("bookingDateTime")), formatDateTime(scheduleObject.getString("startDateTime")),
                                         formatDateTime(scheduleObject.getString("destinationDateTime")), object.getInt("seats"),
-                                        scheduleObject.getInt("status"), object.getBoolean("isPast")));
+                                        object.getInt("status"), object.getBoolean("isPast")));
 
                                 // Extract and handle data from each JSON object here
                             }

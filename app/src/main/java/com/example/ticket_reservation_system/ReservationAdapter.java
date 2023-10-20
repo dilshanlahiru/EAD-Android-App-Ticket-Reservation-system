@@ -87,9 +87,14 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
                     @Override
                     public void onClick(View v) {
                         Log.e("click", "click edit button" );
-                        Intent intent = new Intent(view.getContext(),UpdateResevations.class);
-                        intent.putExtra("id", reservation.getReservationId());
-                        view.getContext().startActivity(intent);
+                        if (reservation.getStatus()==1){
+                            Toast.makeText(context, " Changes can only be made up to 5 days before the reservation date", Toast.LENGTH_SHORT).show();
+
+                        }else {
+                            Intent intent = new Intent(view.getContext(), UpdateResevations.class);
+                            intent.putExtra("id", reservation.getReservationId());
+                            view.getContext().startActivity(intent);
+                        }
                         // Handle the "Add Reservation" button click
                         // You can open a new activity or a dialog to create a new reservation
                     }
@@ -97,9 +102,13 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
                 deleteButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Log.e("click", "click delete button" );
-                        deleteReservation(reservation.getReservationId());
+                        if (reservation.getStatus()==1){
+                            Toast.makeText(context, " Changes can only be made up to 5 days before the reservation date", Toast.LENGTH_SHORT).show();
 
+                        }else {
+                            Log.e("click", "click delete button");
+                            deleteReservation(reservation.getReservationId());
+                        }
 //                        Intent intent = new Intent(context, CommenPage.class);
 //                        context.startActivity(intent);
                         // Handle the "Add Reservation" button click
