@@ -69,8 +69,10 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
                 TextView popupStartTime = dialogview.findViewById(R.id.popupStartDateTime);
                 TextView popupDestinationTime = dialogview.findViewById(R.id.popupDestinaionDateTime);
                 TextView seatCount = dialogview.findViewById(R.id.popupseatCount);
+                TextView availability = dialogview.findViewById(R.id.popupStatus);
                 Button editButton = dialogview.findViewById(R.id.button1);
                 Button deleteButton = dialogview.findViewById(R.id.button2);
+
 
                 // Populate the TextViews with reservation details
                 popupTrainName.setText( reservation.getTrainName());
@@ -79,6 +81,7 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
                 popupStartTime.setText(reservation.getStartDateTime());
                 popupDestinationTime.setText(reservation.getDestinationDateTime());
                 seatCount.setText(""+reservation.getSeats());
+                availability.setText(checkConditionPopUp(reservation.isPast()));
 
                 editButton.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -115,6 +118,16 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
 
             }
         });
+    }
+
+    public  String checkConditionPopUp(boolean input) {
+        String out =null;
+        if(input){
+            out = "Expired";
+        }else {
+            out = "Available";
+        }
+        return out;
     }
 
     @Override

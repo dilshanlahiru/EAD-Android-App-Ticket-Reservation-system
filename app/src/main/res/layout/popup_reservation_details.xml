@@ -107,7 +107,7 @@
             android:layout_height="wrap_content"
             android:textColorHint="@color/orangetint"
             android:textSize="18dp"
-            android:text="Start Time"
+            android:text="Start Time: "
             android:textColor="@color/orange1"
             android:layout_gravity="center_horizontal"/>
 
@@ -165,6 +165,32 @@
 
         <TextView
             android:id="@+id/popupseatCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/orangetint"
+            android:textSize="18dp"
+            android:layout_gravity="center_horizontal"
+            android:text="seat count " /></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp"
+        >
+        <TextView
+            android:id="@+id/v_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/orangetint"
+            android:textSize="18dp"
+            android:text="Reservation Status: "
+            android:textColor="@color/orange1"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/popupStatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/orangetint"
